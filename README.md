@@ -7,25 +7,24 @@ api gateway, service discovery, circuit breaker и external configuration.
 Для запуска программы нужно запускать модули
 в следующем порядке.
 
-Сначала запустить приложение из другого репозитория,
-которое привязано к api gateway. Там содержится 
-своя инструкция:
-https://github.com/Matiika/AstronSpringHomework
-
 Далее переходим уже к этому приложению `spring-micro-demo`.
 
 1. Запустить модуль сервера eureka-server по пути
    
     `eureka-server/src/main/java/eurekaserver/EurekaServerApplication.java`
-2. Запустить модуль клиента eureka-client по пути
+2. Запустить приложение из другого репозитория,
+   которое привязано к api gateway. Там содержится
+   своя инструкция:
+   https://github.com/Matiika/AstronSpringHomework
+3. Возвращаемся к текущему приложению. Запустить модуль клиента eureka-client по пути
    
     `eureka-client/src/main/java/eurikaclient/EurekaClientApplication.java`
-3. Запустить ServerConfigApplication. Это также демонстрация
+4. Запустить ServerConfigApplication. Это также демонстрация
    external configuration так как настройки порта следующи 
 модуль Api-Gateway будет брать из внешнего репозитория.
 
    `config-server/src/main/java/serverconfigapp/ServerConfigApplication.java`
-4. Запуск самого Api-Gateway по пути:
+5. Запуск самого Api-Gateway по пути:
    
     `api-gateway/src/main/java/apigateway/ApiGatewayApplication.java`
 
@@ -34,6 +33,8 @@ https://github.com/Matiika/AstronSpringHomework
 1. API-GATEWAY
 2. ECLIENT
 3. USER-SERVICE
+
+##  Тест работоспобности
 
 Теперь для теста программы можно использовать следующие команды. 
 Все они будут обращаться через http://localhost:8082/, которая стала 
